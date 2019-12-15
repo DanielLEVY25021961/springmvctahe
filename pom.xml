@@ -30,6 +30,9 @@
 		<!-- Ne plante pas en cas d'absence de Web XML (projet SPRING) 	-->		
 		<failOnMissingWebXml>false</failOnMissingWebXml>
 		
+		<!-- CLASSE APPLICATIVE POUR CREER UN JAR APPLICATIF -->
+		<start-class>levy.daniel.application.SpringmvctaheApplication</start-class>
+		
 	</properties>
 
 
@@ -250,12 +253,106 @@
 	</dependencies>
 
 	<build>
+
+		<!-- ====================== -->
+		<!-- CHEMINS ET REPERTOIRES -->
+		<!-- ====================== -->
+
+		<!-- CREER A LA MAIN SI MANQUANT -->
+		
+		<!-- REPERTOIRE DES BUILDS (target)-->
+		<directory>${project.basedir}/target</directory>
+		<!-- Répetoire des classes compilées -->
+		<outputDirectory>${project.build.directory}/classes</outputDirectory>
+
+		<!-- REPERTOIRE DES SOURCES (target)-->
+		<!-- Répertoire des src Java. -->
+		<sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+		<!-- Répertoire des scripts (scripts SQL ou Batch) -->
+		<scriptSourceDirectory>${project.basedir}/src/main/scripts</scriptSourceDirectory>
+		<!-- Répertoire des Tests src Java. -->
+		<testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
+		
+		<!-- Répetoire des classes compilées de test -->
+		<testOutputDirectory>${project.build.directory}/test-classes</testOutputDirectory>
+		<resources>
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+			</resource>		
+		</resources>
+		
+		<testResources>
+			<testResource>
+				<directory>${project.basedir}/src/test/resources</directory>
+			</testResource>
+		</testResources>
+
+		
+		<!-- ============================================== -->
+		<!-- NOM DU LIVRABLE CREE PAR MAVEN (jar, war, ...) -->
+		<!-- ============================================== -->
+		<finalName>${project.artifactId}-${project.version}</finalName>
+
+
+  				<!-- ================================== -->
+				<!--       	Management des plugins		-->
+				<!-- ================================== -->	
 		<plugins>
+		
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			
+			<!-- MAVEN RESOURCE PLUGIN POUR CREER DES REPERTOIRES SOUS target  -->
+			<plugin>
+			
+				<artifactId>maven-resources-plugin</artifactId>
+	
+					<executions>
+					
+						<!-- COPIE LE REPERTOIRE '/temp' et ses sous-répertoires SOUS 'target/temp' POUR LE JAR EXECUTABLE -->
+						<execution>
+							<id>copy-resources-1</id>
+							<phase>validate</phase>
+							<goals>
+								<goal>copy-resources</goal>
+							</goals>
+							<configuration>
+								<outputDirectory>${basedir}/target/temp</outputDirectory>
+								<resources>
+									<resource>
+										<directory>${basedir}/temp</directory>
+										<filtering>true</filtering>
+									</resource>
+								</resources>
+							</configuration>
+						</execution>
+						
+						<!-- COPIE LE REPERTOIRE '/televersements' et ses sous-répertoires SOUS 'target/televersements' POUR LE JAR EXECUTABLE -->
+						<execution>
+							<id>copy-resources-2</id>
+							<phase>validate</phase>
+							<goals>
+								<goal>copy-resources</goal>
+							</goals>
+							<configuration>
+								<outputDirectory>${basedir}/target/televersements</outputDirectory>
+								<resources>
+									<resource>
+										<directory>${basedir}/televersements</directory>
+										<filtering>true</filtering>
+									</resource>
+								</resources>
+							</configuration>
+						</execution>
+						
+					</executions>
+					
+			  </plugin>
+			  
 		</plugins>
+     	    
 	</build>
 
 </project>
