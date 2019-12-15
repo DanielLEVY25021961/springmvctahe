@@ -5,7 +5,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.format.Formatter;
@@ -81,10 +80,6 @@ public class LocalDateTimeFormatter implements Formatter<LocalDateTime> {
 	public LocalDateTime parse(
 			final String pText, final Locale pLocale) 
 				throws ParseException {
-		
-		if (StringUtils.isBlank(pText)) {
-			return null;
-		}
 				
 		final DateTimeFormatter formatter 
 			= DateTimeFormatter.ofPattern("yyyy-MM-dd").withLocale(pLocale);

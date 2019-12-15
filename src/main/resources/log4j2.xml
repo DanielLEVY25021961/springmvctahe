@@ -59,7 +59,7 @@
 		<!-- =========================== -->
 		<!--         	ROOT 			-->		
 		<!-- =========================== -->	    	
-		<Root level="info">
+		<Root level="OFF">
 			<AppenderRef ref="Console" />
 			<AppenderRef ref="RollingFile" />
 		</Root>
@@ -113,7 +113,7 @@
 		<!--         SPRING		 		 -->		
 		<!-- =========================== -->
 		<!-- Log everything in SPRING -->	    		    
-	    <Logger name="org.springframework" level="info" additivity="false">
+	    <Logger name="org.springframework" level="INFO" additivity="false">
 	      <AppenderRef ref="Console" />
 	      <AppenderRef ref="RollingFile" />
 	    </Logger>
@@ -121,7 +121,7 @@
 		<!-- Log les tests JUnit exécutés sous SPRING -->
 		<!-- info permet de voir les traces des tests JUnit sous SPRING -->
 <!-- 		<Logger name="org.springframework.test.context" level="info" additivity="false"> -->
-		<Logger name="org.springframework.test.context" level="warn" additivity="false">
+		<Logger name="org.springframework.test.context" level="INFO" additivity="false">
 	      <AppenderRef ref="Console" />
 	      <AppenderRef ref="RollingFile" />
 	    </Logger>
@@ -129,7 +129,7 @@
 		<!-- Log les configurations des BEANS SPRING -->
 		<!-- info permet de voir les traces des configurations des BEANS SPRING -->
 <!-- 		<Logger name="org.springframework.context.support" level="info" additivity="false"> -->
-		<Logger name="org.springframework.context.support" level="warn" additivity="false">
+		<Logger name="org.springframework.context.support" level="INFO" additivity="false">
 	      <AppenderRef ref="Console" />
 	      <AppenderRef ref="RollingFile" />
 	    </Logger>

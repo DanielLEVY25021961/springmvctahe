@@ -13,7 +13,9 @@
 	   class="ch.qos.logback.core.ConsoleAppender">
 	   <encoder>
 	     <pattern>
-	        %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+	        <!--%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n-->
+	        <!--%black(%d{ISO8601}) %highlight(%-5level) [%blue(%t)] %yellow(%C{1.}): %msg%n%throwable-->
+	        %black(%d{ISO8601}) %highlight(%-5level) [%blue(%thread)] [Logger = %red(%-80C{80})]: %msg%n%throwable
 	      </pattern>
 	    </encoder>
 	  </appender>
@@ -54,7 +56,7 @@
 		<!-- =========================== -->
 		<!--         	ROOT 			-->		
 		<!-- =========================== -->	    	
-		<root level="OFF">
+		<root level="INFO">
 			<appender-ref ref="Console" />
 <!-- 	      <appender-ref ref="RollingFile" /> -->
 		</root>
@@ -74,6 +76,12 @@
 <!-- 	      <appender-ref ref="RollingFile" /> -->
 	    </Logger>
 	    
+	    <!-- sun.rmi.runtime -->
+		<Logger name="sun.rmi.runtime" level="INFO" additivity="false">
+	      <appender-ref ref="Console" />
+<!-- 	      <appender-ref ref="RollingFile" /> -->
+	    </Logger>
+	    	    
 		<!-- =========================== -->
 		<!--         	APACHE	 		 -->		
 		<!-- =========================== -->	    	
@@ -146,7 +154,7 @@
 		<!-- Log les configurations des BEANS SPRING -->
 		<!-- info permet de voir les traces des configurations des BEANS SPRING -->
 <!-- 		<Logger name="org.springframework.context.support" level="info" additivity="false"> -->
-		<Logger name="org.springframework.context.support" level="WARN" additivity="false">
+		<Logger name="org.springframework.context.support" level="INFO" additivity="false">
 	      <appender-ref ref="Console" />
 	      <!-- <appender-ref ref="RollingFile" /> -->
 	    </Logger>

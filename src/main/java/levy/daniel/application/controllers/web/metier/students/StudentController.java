@@ -267,19 +267,16 @@ public class StudentController {
 	 * @param pId : Long : ID en base de l'objet métier.
 	 * 
 	 * @return : Optional&lt;StudentEntityJPA&gt;
+	 * 
+	 * @throws Exception 
 	 */
 	@GetMapping("/findById")
 	@ResponseBody
 	public Optional<StudentEntityJPA> findById(
-			@RequestParam(name="id", required=true) final Long pId) {
-		
-		try {
-			
-			return this.studentService.findById(pId);
-			
-		} catch (Exception e) {
-			return null;
-		}
+			@RequestParam(name="id", required=true) final Long pId) 
+					throws Exception {
+					
+		return this.studentService.findById(pId);
 		
 	} // Fin de findById(...)._____________________________________________
 	
