@@ -78,11 +78,37 @@
 				th:src="@{/js/main.js}"></script>
                                
         <!-- titre de l'onglet -->	    
-	    <title>index.html</title>
+        <title>index.html</title>
 	    
 	</head>
 	
 	<body>
+
+        <div class="container-fluid">
+
+            <div class="container">
+
+                <h1>index.html une page HTML dynamique (Thymeleaf)</h1>
+
+                <div class="bg-danger">
+
+                    <p th:text="'Hello, ' + ${nom} + ' !'">Hello</p>
+ 
+                    <p th:text="'voici l\' heure : ' + ${heure}">voici l'heure</p>
+
+                </div>
+
+                <div class="bg-primary">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                        Dolorum porro ipsa aspernatur quaerat fuga ex earum obcaecati libero maiores, 
+                        excepturi nesciunt suscipit, corporis fugiat blanditiis asperiores, 
+                        harum cum alias quam.
+                    </p>
+                </div>
+                
+            </div>
+
+        </div>
 	    
 	</body>
 	
