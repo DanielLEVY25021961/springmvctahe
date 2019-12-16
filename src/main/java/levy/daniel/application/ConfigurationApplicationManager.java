@@ -186,17 +186,16 @@ public final class ConfigurationApplicationManager {
 	 * LOG : Log : 
 	 * Logger pour Log4j (utilisant commons-logging).
 	 */
-	private static final Log LOG = LogFactory
-			.getLog(ConfigurationApplicationManager.class);
+	private static final Log LOG 
+		= LogFactory.getLog(ConfigurationApplicationManager.class);
+	
 
 	// *************************METHODES************************************/
 	
 	
 	 /**
-	 * method CONSTRUCTEUR ConfigurationApplicationManager() :<br/>
-	 * CONSTRUCTEUR D'ARITE NULLE.<br/>
+	 * CONSTRUCTEUR D'ARITE NULLE.
 	 * private pour interdire l'instanciation.<br/>
-	 * <br/>
 	 */
 	private ConfigurationApplicationManager() {
 		super();
