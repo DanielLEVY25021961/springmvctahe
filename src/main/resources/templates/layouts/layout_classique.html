@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr" 
+    	xmlns:th="http://www.thymeleaf.org" 
+    	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+    	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+    <head>
+
+        <!-- fichier HTML encodé en UTF-8 -->
+        <meta charset="UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+        <!-- compatibilité avec les anciennes versions d'Internet Explorer -->
+        <!--[if IE]>
+                <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+            <![endif]-->
+
+        <!--Description du contenu de la page-->
+        <meta name="description" content="accueil, ..." />
+
+        <!--Mots clé-->
+        <meta name="keywords" content="accueil, page accueil, ..." />
+
+        <!-- pour site responsive -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- LIEN vers CSS BOOTSTRAP DANS RESSOURCES -->
+<!--         <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap.min.css" -->
+<!--             th:href="@{/css/bootstrap.min.css}" /> -->
+
+        <!-- lien vers CSS PERSONNELLE -->
+		<link rel="stylesheet" type="text/css" href="../../static/css/application.css" 
+				th:href="@{/css/application.css}" />
+            
+        <!-- lien vers CSS BOOTSTRAP AVEC WEBJARS-->
+         <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" 
+         	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+         
+         <!-- lien vers CSS FONT-AWESOME AVEC WEBJARS-->
+          <link rel="stylesheet" type="text/css" href="/webjars/font-awesome/css/fontawesome.min.css"
+         	th:href="@{/webjars/font-awesome/css/fontawesome.min.css}" />
+        
+        <!-- JAVASCRIPT -->
+        <!-- ATTENTION : TOUJOURS METTRE JQUERY AVANT BOOTSTRAP --> 
+		<!-- jQUERY -->
+		<script type="text/javascript" src="/webjars/jquery/jquery.min.js" 
+				th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        
+        <!-- POPPER.js -->
+        <script type="text/javascript" src="/webjars/popper.js/popper.min.js" 
+     			th:src="@{/webjars/popper.js/popper.min.js}" ></script> 
+
+		<!-- BOOTSTRAP.js -->
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js" 
+        		th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>  
+                               
+        <!-- titre de l'onglet -->
+        <title>layouts/fonds_youssfi_1.html</title>
+
+    </head>
+
+
+    <body>
+    		<header class="container-fluid">
+			
+				<div class="container">
+
+					<nav class="navbar  bg-light mb-3">
+			
+						<span class="navbar-brand mb-0 h1">ETUDIANTS</span>
+						
+						<ul class="nav">
+						
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/}">Accueil</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/StudentController/versPageListPaginee}">Lister les étudiants</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/LoginController/getLoggedUserInSession}">User en session</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/UserSpringController/versPageUserSpring}">Users</a>
+							</li>
+						
+						</ul>
+	
+						<ul class="nav justify-content-end">
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/LoginController/versLogin?logout}">Logout</a>
+							</li>
+						</ul>
+						
+					</nav>
+
+				</div>
+				
+			  
+           </header>
+
+           
+           <div class="container-fluid w-75">
+           
+           	   <!-- CONTENU MODIFIABLE DES PAGES DECORANTES INJECTE DANS CETTE SECTION -->
+	           <section layout:fragment="content">
+	
+	           </section>
+           
+           </div>
+           
+           
+
+			<footer class="fixed-bottom p-3 bg-secondary">
+			
+				<div class="container">
+					<small>Mon adresse</small>
+				</div>
+				
+			</footer>
+			
+			
+        <!-- JAVASCRIPT -->
+        <!-- ATTENTION : TOUJOURS METTRE JQUERY AVANT BOOTSTRAP --> 
+		<!-- jQUERY -->
+		<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        
+        <!-- POPPER.js -->
+<!--         <script type="text/javascript" src="/webjars/popper.js/popper.min.js" /> -->
+
+		<!-- BOOTSTRAP.js -->
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>

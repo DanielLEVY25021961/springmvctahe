@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<html lang="fr" 
+		xmlns:th="http://www.thymeleaf.org" 
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 	<head>
 	
@@ -21,27 +24,29 @@
         <!-- pour site responsive -->	        	
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
+        <!-- ==================== -->
+        <!--           CSS        -->
+        <!-- ==================== -->
+         <!-- BOOTSTRAP -->
+         <!-- lien vers CSS BOOTSTRAP AVEC WEBJARS-->
+         <!-- <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" 
+         	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" /> -->
+        
         <!-- LIEN vers CSS BOOTSTRAP DANS RESSOURCES -->
         <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap.min.css"
             th:href="@{/css/bootstrap.min.css}" />
-
-        <!-- LIEN vers CSS BOOTSTRAP DANS RESSOURCES -->
-        <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap.min.css"
-            th:href="@{/css/bootstrap.min.css}" />
-
+            
         <!-- lien vers CSS PERSONNELLE -->
 		<link rel="stylesheet" type="text/css" href="../../../static/css/application.css" 
 				th:href="@{/css/application.css}" />
-            
-        <!-- lien vers CSS BOOTSTRAP AVEC WEBJARS-->
-         <!-- <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" 
-         	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" /> -->
-         
+                     
          <!-- lien vers CSS FONT-AWESOME AVEC WEBJARS-->
           <!-- <link rel="stylesheet" type="text/css" href="/webjars/font-awesome/css/fontawesome.min.css"
          	th:href="@{/webjars/font-awesome/css/fontawesome.min.css}" /> -->
         
-        <!-- JAVASCRIPT -->
+        <!-- ==================== -->
+        <!--      JAVASCRIPT      -->
+        <!-- ==================== -->
 		<!-- ATTENTION : TOUJOURS METTRE JQUERY AVANT TOUT SCRIPT --> 
 		<!-- ***************************************************** -->
 		<!-- jQUERY AVEC WEBJARS -->
